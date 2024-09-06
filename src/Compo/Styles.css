@@ -1,0 +1,14 @@
+/* styles.css */
+body.light {
+    background-color: white;
+    color: black;
+  }
+  
+  body.dark {
+    background-color: black;
+    color: white;
+  }
+  body.rainbow {
+    background: linear-gradient(to right,#ffb3b3,	 #ffd1b3, #ffff99,  #b3ffb3, #99ccff,   #9999ff, #ffccff);
+    color: #ffffff;
+  }

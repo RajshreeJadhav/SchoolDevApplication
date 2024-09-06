@@ -1,0 +1,93 @@
+@keyframes rubberBand {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .rubber-button {
+    transition: border-radius 0.3s ease-in-out;
+  }
+  
+  .rubber-button:hover {
+    animation: rubberBand 1s;
+    border-radius: 10px; /* Increase this value to get a more rounded effect */
+    color:White;
+    
+  }
+  
+  .bg-orange-600 {
+    background-color: #fb8f3c; /* Tailwind CSS equivalent for bg-orange-400 */
+  }
+  
+  /* .border {
+    border-width: 1px;
+  } */
+  
+  /* .border-black {
+    border-color: black;
+  } */
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .text-black {
+    color: black;
+  }
+  
+  .font-serif {
+    font-family: serif;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .text-xl {
+    font-size: 1.25rem;
+  }
+  
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  
+  .focus\:outline-none:focus {
+    outline: 0;
+  }
+  
+  .focus\:shadow-outline:focus {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  }
+  
+  .text-blue-800 {
+    color: #1e3a8a; /* Tailwind CSS equivalent for text-blue-800 */
+  }
+  

@@ -1,0 +1,75 @@
+@import "https://unpkg.com/open-props";
+
+/* General button styles */
+button {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-8);
+  font-size: var(--font-size-3);
+  color: var(--gray-8);
+  background: var(--gray-0);
+  border: none !important;
+  padding: var(--size-3) var(--size-6);
+  transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
+  transition: transform 0.1s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Specific styles for target buttons only */
+.animate-button:hover {
+  --y: -3; /* Move the button up by 3% */
+  --scale: 1.05; /* Scale the button up by 5% */
+  --border-scale: 1; /* Set border scale to 1 */
+}
+
+.animate-button:before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--size-2) * -1);
+  border: var(--size-1) solid var(--gray-0);
+  transform: scale(var(--border-scale, 0));
+  transition: transform 0.125s;
+  
+  --angle-one: 105deg;
+  --angle-two: 290deg;
+  --spread-one: 20deg;
+  --spread-two: 30deg;
+  --start-one: calc(var(--angle-one) - (var(--spread-one) * 0.5));
+  --start-two: calc(var(--angle-two) - (var(--spread-two) * 0.5));
+  --end-one: calc(var(--angle-one) + (var(--spread-one) * 0.5));
+  --end-two: calc(var(--angle-two) + (var(--spread-two) * 0.5));
+  
+  mask: conic-gradient(
+    transparent 0 var(--start-one),
+    white var(--start-one) var(--end-one),
+    transparent var(--end-one) var(--start-two),
+    white var(--start-two) var(--end-two),
+    transparent var(--end-two)
+  );
+  
+  z-index: -1;
+}
+
+/* Adjust angles and spreads for specific buttons */
+button:contains('Exam 1'):hover:before {
+  --angle-one: 120deg;
+  --angle-two: 300deg;
+}
+
+button:contains('Exam 2'):hover:before {
+  --angle-one: 135deg;
+  --angle-two: 315deg;
+}
+
+button:contains('Exam 3'):hover:before {
+  --angle-one: 150deg;
+  --angle-two: 330deg;
+}
+
+button:contains('Annual'):hover:before {
+  --angle-one: 165deg;
+  --angle-two: 345deg;
+}

@@ -1,0 +1,16 @@
+@keyframes borderAnimate {
+  0%, 100% {
+    outline-color: transparent;
+  }
+  50% {
+    outline-color: black;
+  }
+}
+
+.border-animate {
+  transition: background 0.3s ease, outline-color 0.3s ease;
+}
+
+.border-animate:hover {
+  animation: borderAnimate 1s infinite;
+}

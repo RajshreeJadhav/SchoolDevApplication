@@ -1,0 +1,21 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your CSS with utilities */
+@layer utilities {
+  .border-animate {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  .w-40:hover .border-animate {
+    background-color: currentColor;
+  }
+}

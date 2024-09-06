@@ -1,0 +1,88 @@
+@import "https://unpkg.com/open-props";
+
+/* General button styles (if needed, else remove) */
+button {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-8);
+  font-size: var(--font-size-3); /* Adjust font size to be smaller */
+  color: var(--gray-8);
+  background: var(--gray-0);
+  border: none !important;
+  padding: var(--size-3) var(--size-6); /* Adjust padding for smaller size */
+  transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
+  transition: transform 0.1s;
+  position: relative;
+
+}
+
+/* Specific styles for target buttons only */
+.btn-home:hover, .btn-highlights:hover, .btn-complaints:hover, .btn-help:hover {
+  --y: -3; /* Reduce translateY on hover */
+  --scale: 1.05; /* Slightly reduce scale on hover */
+  --border-scale: 1;
+
+}
+
+.btn-home:before, .btn-highlights:before, .btn-complaints:before, .btn-help:before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--size-2) * -1); /* Adjust border inset for smaller effect */
+  border: var(--size-1) solid var(--gray-0); /* Adjust border size for smaller effect */
+  transform: scale(var(--border-scale, 0));
+  transition: transform 0.125s;
+  
+  --angle-one: 105deg;
+  --angle-two: 290deg;
+  --spread-one: 20deg; /* Reduce spread for smaller effect */
+  --spread-two: 30deg; /* Reduce spread for smaller effect */
+  --start-one: calc(var(--angle-one) - (var(--spread-one) * 0.5));
+  --start-two: calc(var(--angle-two) - (var(--spread-two) * 0.5));
+  --end-one: calc(var(--angle-one) + (var(--spread-one) * 0.5));
+  --end-two: calc(var(--angle-two) + (var(--spread-two) * 0.5));
+  
+  mask: conic-gradient(
+    transparent 0 var(--start-one),
+    white var(--start-one) var(--end-one),
+    transparent var(--end-one) var(--start-two),
+    white var(--start-two) var(--end-two),
+    transparent var(--end-two)
+
+    );
+  
+    z-index: -1;
+}
+
+/* Adjust angles and spreads for specific buttons */
+button:contains('Home'):hover:before {
+  --angle-one: 120deg;
+  --angle-two: 300deg;
+}
+
+button:contains('Highlights'):hover:before {
+  --angle-one: 135deg;
+  --angle-two: 315deg;
+}
+
+button:contains('Complaints Box'):hover:before {
+  --angle-one: 150deg;
+  --angle-two: 330deg;
+}
+
+button:contains('Help'):hover:before {
+  --angle-one: 165deg;
+  --angle-two: 345deg;
+}
+.font-berkshire-swash {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 28px; 
+}
+.fredericka {
+  font-family: 'Fredericka the Great', cursive;
+  
+}
+.font-handlee {
+  font-family: 'Handlee', cursive;
+}
+.font-just-another-hand {
+  font-family: 'Just Another Hand', cursive;
+}

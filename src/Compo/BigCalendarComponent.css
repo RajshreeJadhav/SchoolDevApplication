@@ -1,0 +1,29 @@
+/* Custom styles for react-big-calendar */
+.rbc-calendar {
+    background-color: white;
+  }
+  
+  .rbc-toolbar {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rbc-toolbar button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .rbc-toolbar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .rbc-event {
+    background-color: #007bff;
+    color: white;
+  }
+  
